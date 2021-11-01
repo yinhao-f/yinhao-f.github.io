@@ -9,12 +9,12 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: Aurora's Blog
-  author: Aurora
-  nick: Auroral UI
+  subtitle: furai's blog
+  author: 風籟
+  nick: furai
   description:
   link: '/'
-  language: en
+  language: cn
   multi_language: true
   logo: https://img-blog.csdnimg.cn/20210313122054101.png
   avatar: https://img-blog.csdnimg.cn/20210313122054101.png
@@ -53,8 +53,8 @@ menu:
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
 theme:
-  dark_mode: true
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
+  dark_mode: auto
+  profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
     color_1: '#24c6dc'
