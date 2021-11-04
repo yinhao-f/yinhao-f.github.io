@@ -16,8 +16,8 @@ site:
   link: '/'
   language: cn
   multi_language: true
-  logo: https://img-blog.csdnimg.cn/20210313122054101.png
-  avatar: https://img-blog.csdnimg.cn/20210313122054101.png
+  logo:
+  avatar: /img/profile.png
   beian:
     number: ''
     link: ''
@@ -57,16 +57,20 @@ theme:
   profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    color_1: '#24c6dc'
-    color_2: '#5433ff'
-    color_3: '#ff0099'
+    color_1: '#00BCFF'
+    color_2: '#6EFFFF'
+    color_3: '#00BCFF'
 
 #! ---------------------------------------------------------------
 #! Social Configs
 #! @docs https://aurora.tridiamond.tech/guide/social.html
 #! ---------------------------------------------------------------
 socials:
+  github: 'https://github.com/yinhao-f'
   customs:
+      bilibili:
+          icon: /svg/bilibili.svg
+          link: https://space.bilibili.com/109981771?spm_id_from=333.1007.0.0
   ##! Example:
   ##! --- Using SVG
   # bilibili:
@@ -101,7 +105,7 @@ site_meta:
 
 # For local development only!
 gitalk:
-  enable: true
+  enable: false
   autoExpand: true
   clientID: ''
   clientSecret: ''
@@ -153,7 +157,7 @@ copy_protection:
 #! ---------------------------------------------------------------
 aurora_bot:
   enable: false
-  locale: en
+  locale: cn
   bot_type: dia
   tips:
 
