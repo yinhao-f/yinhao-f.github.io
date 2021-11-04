@@ -12,7 +12,7 @@ site:
   subtitle: furai's blog
   author: 風籟
   nick: furai
-  description:
+  description: 南方度假籁籁 <br/> Java/Python <br/> Dota 2/MHW/FFXIV
   link: '/'
   language: cn
   multi_language: true
@@ -47,6 +47,19 @@ menu:
   About: true
   Tags: true
   Archives: true
+  Title1:
+    name: "menuName"
+    path: "https://aurora.tridiamond.tech/zh/guide/menu.html#%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"
+  Title2:
+    name: "menu2Name"
+    children:
+      subtitle:
+        name: "subtitle1"
+        path: "asdfasdf"
+      subtilte2:
+        name: "subtitle2"
+        path: "abcasdf"
+        
 
 #! ---------------------------------------------------------------
 #! Theme Config
@@ -106,7 +119,7 @@ site_meta:
 # For local development only!
 gitalk:
   enable: false
-  autoExpand: true
+  autoExpand: false
   clientID: ''
   clientSecret: ''
   repo: 'dev-blog-comments'
@@ -115,7 +128,7 @@ gitalk:
   id: uid
   language: en
   distractionFreeMode: true
-  recentComment: true
+  recentComment: false
   proxy: ''
 
 # Valine comment plugin (recommended!)
@@ -132,7 +145,7 @@ valine:
   meta: ['nick', 'mail']
   requiredFields: []
   admin: 'TriDiamond'
-  recentComment: true
+  recentComment: false
 
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
@@ -142,8 +155,8 @@ busuanzi:
 copy_protection:
   enable: true
   author:
-    cn: 作者
-    en: Author
+    cn: 風籟
+    en: Furai
   link:
     cn: 本文来自于
     en: Article is from
