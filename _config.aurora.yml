@@ -47,18 +47,15 @@ menu:
   About: true
   Tags: true
   Archives: true
-  Title1:
-    name: "菜单设置教程"
-    path: "https://aurora.tridiamond.tech/zh/guide/menu.html#%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"
-  Title2:
-    name: "menu2Name"
+  More:
+    name: "更多"
     children:
-      subtitle:
-        name: "subtitle1"
-        path: "asdfasdf"
-      subtilte2:
-        name: "subtitle2"
-        path: "abcasdf"
+        hexo-docs:
+            name: Hexo文档
+            path: https://hexo.io/zh-cn/docs/
+        aurora-docs:
+            name: Aurora主题文档
+            path: https://aurora.tridiamond.tech/zh/guide/
 
 
 #! ---------------------------------------------------------------
