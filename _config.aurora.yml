@@ -44,18 +44,26 @@ authors:
 #！ @docs https://aurora.tridiamond.tech/guide/menu.html
 #! ---------------------------------------------------------------
 menu:
-  About: true
+  About: false
   Tags: true
   Archives: true
+
+  Playground:
+    name: Playground
+    children:
+      ffxiv:
+        name: FFXIV
+        path: /page/ffxiv/
+
   More:
     name: "更多"
     children:
-        hexo-docs:
-            name: Hexo文档
-            path: https://hexo.io/zh-cn/docs/
-        aurora-docs:
-            name: Aurora主题文档
-            path: https://aurora.tridiamond.tech/zh/guide/
+      hexo-docs:
+        name: Hexo文档
+        path: https://hexo.io/zh-cn/docs/
+      aurora-docs:
+        name: Aurora主题文档
+        path: https://aurora.tridiamond.tech/zh/guide/
 
 
 #! ---------------------------------------------------------------
@@ -78,9 +86,12 @@ theme:
 socials:
   github: 'https://github.com/yinhao-f'
   customs:
-      bilibili:
-          icon: /svg/bilibili.svg
-          link: https://space.bilibili.com/109981771?spm_id_from=333.1007.0.0
+    bilibili:
+      icon: /svg/bilibili.svg
+      link: https://space.bilibili.com/109981771?spm_id_from=333.1007.0.0
+    steam:
+      icon: /svg/steam.svg
+      link: https://store.steampowered.com
   ##! Example:
   ##! --- Using SVG
   # bilibili:
