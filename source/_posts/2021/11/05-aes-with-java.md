@@ -3,15 +3,14 @@ title: 在Java里使用AES加密
 date: 2021-11-05 10:43:32
 tags: [Java, 工具]
 ---
-# 在Java里使用AES加密
 
-## 前言
+# 前言
 写一个模拟登录界面的时候需要把前端传来的用户密码做解密，于是写一个AES加密解密工具
 
-## 具体实现
+# 具体实现
 Java有内置的AES工具，只需调用即可
 
-### 导入
+## 导入
 导入所需的包，也可以让IDE自动完成
 
 ```java
@@ -22,7 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 ```
 
-### 定义常量
+## 定义常量
 定义一个默认密钥`SECRET_KEY`，方便调试使用
 定义默认算法`ALG`，使用AES、ECB电子密码本模式，PKCS5Padding
 导入base64转码器
@@ -39,7 +38,7 @@ private static Base64.Encoder base64Encoder = Base64.getEncoder();
 private static Base64.Decoder base64Decoder = Base64.getDecoder();
 ```
 
-### 加密模块
+## 加密模块
 虽然本次暂时用不到加密模块，但既然写了解密，加密也差不多
 
 ```java
@@ -61,7 +60,7 @@ public static String encode(String content, String key) {
 ```
 加密后使用base64转码，记得转为UTF_8，否则中文会出错
 
-### 解密模块
+## 解密模块
 和加密模块大同小异，只需要将cipher的模式改成DECRYPT_MODE，并将密码先做base64转换为字节数组
 解码后同样需要使用UTF_8编码
 
@@ -83,7 +82,7 @@ public static String decode(String content, String key) {
 }
 ```
 
-### 调试
+## 调试
 ```java
 public static void main(String[] args) {
     String content = "就是不告诉你";

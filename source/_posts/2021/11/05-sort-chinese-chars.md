@@ -3,13 +3,13 @@ title: Java汉字排序
 date: 2021-11-05 14:52:02
 tags: [Java, 工具]
 ---
-# 汉字排序
+# 前言
 设计一个通讯录列表，在查询的时候将联系人按照姓名拼音排序。
 
-## 如何实现
+# 如何实现
 使用Comparator和Collator类，对队列内的字符串排序
 
-### 排序对象为字符串List的场景
+## 对字符串List排序的场景
 
 ```java
 import java.text.Collator;
@@ -42,7 +42,7 @@ public class PersonList {
 
 如果队列中的元素为对象（如自定义实体类）要怎么排序呢
 
-### 元素为对象的排序方法
+## 对List元素为对象排序的场景
 首先写一个实体类
 ```java
 import lombok.AllArgsConstructor;
