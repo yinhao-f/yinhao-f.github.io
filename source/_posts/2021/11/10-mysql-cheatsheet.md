@@ -5,12 +5,10 @@ tags: MySQL
 ---
 # 前言
 实用MySQL语句小抄，持久更新
+SQL，全称Structured Query Language，读作sequel或S-Q-L
 
-:::tip
-本文使用cmd进行操作，使用数据库软件时可根据情况忽略 `mysql>` 以及末尾的分号
-:::
+# 命令行语句
 
-# 基础指令
 ## 连接服务器
 ```
 >mysql -u root -p  #root是连接所使用的用户名
@@ -33,7 +31,6 @@ mysql> select version();
 1 row in set (0.00 sec)
 ```
 
-# 数据库指令
 ## 查看所有数据库
 ```
 mysql> show databases;
@@ -50,78 +47,104 @@ mysql> show databases;
 7 rows in set (0.00 sec)
 ```
 
+# 数据库指令
+
 ## 创建数据库
-```
-mysql> create database menagerie;
-Query OK, 1 row affected (0.04 sec)
+```sql
+create database 数据库名
 ```
 
-## 访问数据库
-```
-mysql> use menagerie
-Database changed
+## 使用数据库
+```sql
+use 数据库名
 ```
 
 ## 查看当前选择的数据库
+```sql
+select database()
 ```
-mysql> select database();
-+------------+
-| database() |
-+------------+
-| menagerie  |
-+------------+
-1 row in set (0.00 sec)
+
+## 删除数据库
+```sql
+drop database 数据库名
 ```
 
 # 表指令
 ## 查看数据库内所有表
-```
-mysql> show tables;
-Empty set (0.02 sec)
+```sql
+show tables
 ```
 
 ## 创建表
-```
-mysql> create table pet (name varchar(20), owner varchar(20),
-    -> species varchar(20), sex char(1), birth date, death date);
-Query OK, 0 rows affected (0.11 sec)
+```sql
+create table table_name
+  (column_1 变量类型,
+  column_2 变量类型,
+  column_3 变量类型...)
 ```
 
 ## 查看表结构
-```
-mysql> describe pet;
-+---------+-------------+------+-----+---------+-------+
-| Field   | Type        | Null | Key | Default | Extra |
-+---------+-------------+------+-----+---------+-------+
-| name    | varchar(20) | YES  |     | NULL    |       |
-| owner   | varchar(20) | YES  |     | NULL    |       |
-| species | varchar(20) | YES  |     | NULL    |       |
-| sex     | char(1)     | YES  |     | NULL    |       |
-| birth   | date        | YES  |     | NULL    |       |
-| death   | date        | YES  |     | NULL    |       |
-+---------+-------------+------+-----+---------+-------+
-6 rows in set (0.03 sec)
+```sql
+describe table_name
 ```
 
 # 记录指令
 ## 增
 ```sql
-insert into tbl_name
-  (col_1, col_2,...)
-  values (val_1, val_2,...)
+insert into table_name
+  (column_1, column_2,...)
+  values (value_1, value_2,...)
 ```
 
 ## 删
+```sql
+delete from table_name [where 条件语句]
+```
 
 ## 改
+```sql
+update table_name
+  set column_1 = value_1,
+  column_2 = value_2
+  [where 条件语句 [and/or 条件语句2]]
+```
 
 ## 查
+```sql
+select column_1[, column_2, column_3] [as column_alias]
+  from table_name
+  [where 条件]
 ```
-mysql> select * from pet;
-+----------+-------+---------+------+------------+-------+
-| name     | owner | species | sex  | birth      | death |
-+----------+-------+---------+------+------------+-------+
-| Puffball | Diane | hamster | f    | 1999-03-30 | NULL  |
-+----------+-------+---------+------+------------+-------+
-1 row in set (0.00 sec)
-```
+
+# 数据类型
+## 数值类
+| 类型 | 范围 |
+| ---- | ---- |
+| tinyint | (0, 255) |
+| smallint | (0, 65535) |
+| mediumint | (0, 16777215) |
+| int | (0, 4294967295) |
+| bigint | (0, 2^64-1) |
+| decimal | (M, D) M<=65 |
+| float | (-3.402823466E+38, -1.175494351E-38), 0, (1.175494351E-38, 3.402823466E+38) |
+| double | (-1.7976931348623157E+308, -2.2250738585072014E-308), 0, (2.2250738585072014E-308, 1.7976931348623157E+308) |
+
+## 日期类
+| 类型 | 格式 |
+| --- | --- |
+| date | '0000-00-00' |
+| time | '00:00:00' |
+| datetime | '0000-00-00 00:00:00' |
+| timestamp | '0000-00-00 00:00:00' |
+| year | 0000 |
+
+## 字符串类
+| 类型 | 格式 |
+|---|---|
+| char | (0, 255) |
+| varchar | (0, 65535) |
+
+# 参考资料
+- [MySQL官方文档](https://dev.mysql.com/doc/refman/8.0/en/)
+- [MySQL教程|菜鸟教程](https://www.runoob.com/mysql/mysql-tutorial.html)
+- [SQL教程|菜鸟教程](https://www.runoob.com/sql/sql-tutorial.html)
