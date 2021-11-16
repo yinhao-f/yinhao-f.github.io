@@ -144,6 +144,34 @@ select column_1[, column_2, column_3] [as column_alias]
 | char | (0, 255) |
 | varchar | (0, 65535) |
 
+# Where 字句
+可以使用if条件判断是否传入入参
+```xml
+<select id="getModelList" parameterType="java.util.Map" resultType="java.util.Map">
+  SELECT
+    b.module_id brand,
+    a.goods_id model_id,
+    a.op_type,
+    a.goods_name model_name,
+    a.goods_pic,
+    a.function_details,
+    a.goods_real_price,
+    a.goods_price
+  FROM t_p_goods_view a, t_b_module_goodsview b
+  WHERE
+  <if test="brand != null and brand !=''">
+        b.module_id = #{brand} AND
+  </if>
+  <if test="modelName != null and modelName != ''">
+    a.goods_name LIKE CONCAT('%',#{modelName},'%') AND
+  </if>
+  <if test="flag != null and flag != ''">
+    a.op_type = #{flag} AND
+  </if>
+  a.goods_id = b.goods_id
+</select>
+```
+
 # 参考资料
 - [MySQL官方文档](https://dev.mysql.com/doc/refman/8.0/en/)
 - [MySQL教程|菜鸟教程](https://www.runoob.com/mysql/mysql-tutorial.html)
