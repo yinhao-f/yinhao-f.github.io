@@ -82,10 +82,24 @@ create table table_name
   column_2 变量类型,
   column_3 变量类型...)
 ```
+实例
+```sql
+create table if not exists test (
+  id int unsigned auto_increment,
+  name varchar(20) not null,
+  date_created date,
+  primary key (id)
+)default charset = utf8 #编码设为utf8可以支持汉字
+```
 
 ## 查看表结构
 ```sql
 describe table_name
+```
+
+## 删除表
+```sql
+drop table table_name
 ```
 
 # 记录指令
@@ -100,13 +114,19 @@ insert into table_name
 ```sql
 delete from table_name [where 条件语句]
 ```
+:::tip
+truncate可以清空整张表，并让自动递增的字段归零(delete不会)
+```sql
+truncate table_name
+```
+:::
 
 ## 改
 ```sql
 update table_name
   set column_1 = value_1,
   column_2 = value_2
-  [where 条件语句 [and/or 条件语句2]]
+  [where 条件语句]
 ```
 
 ## 查
@@ -114,7 +134,15 @@ update table_name
 select column_1[, column_2, column_3] [as column_alias]
   from table_name
   [where 条件]
+  [limit 查询数量上限]
+  [order by 需要排序的字段 [desc #降序]]
 ```
+
+## 清空表
+
+
+# 多表联查
+施工中。。。
 
 # 数据类型
 ## 数值类
@@ -144,31 +172,22 @@ select column_1[, column_2, column_3] [as column_alias]
 | char | (0, 255) |
 | varchar | (0, 65535) |
 
-# Where 字句
-可以使用if条件判断是否传入入参
+# Where 子句
+
+## 在MyBatis中使用if条件判断
+在入参给出name的时候用name去匹配，反之查询所有记录
 ```xml
 <select id="getModelList" parameterType="java.util.Map" resultType="java.util.Map">
   SELECT
-    b.module_id brand,
-    a.goods_id model_id,
-    a.op_type,
-    a.goods_name model_name,
-    a.goods_pic,
-    a.function_details,
-    a.goods_real_price,
-    a.goods_price
-  FROM t_p_goods_view a, t_b_module_goodsview b
+    id,
+    name,
+    birthday
+  FROM person_table
   WHERE
-  <if test="brand != null and brand !=''">
-        b.module_id = #{brand} AND
+  <if test="name != null and name !=''">
+        name = #{name} AND
   </if>
-  <if test="modelName != null and modelName != ''">
-    a.goods_name LIKE CONCAT('%',#{modelName},'%') AND
-  </if>
-  <if test="flag != null and flag != ''">
-    a.op_type = #{flag} AND
-  </if>
-  a.goods_id = b.goods_id
+  1=1
 </select>
 ```
 
