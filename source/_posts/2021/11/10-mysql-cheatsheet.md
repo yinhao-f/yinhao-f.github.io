@@ -222,25 +222,6 @@ ALTER TABLE table_name ADD column_name data_type
 | CHAR | (0, 255) |
 | VARCHAR | (0, 65535) |
 
-# Java相关
-
-## 在MyBatis中使用if条件判断
-在入参给出name的时候用name去匹配，反之查询所有记录
-```xml
-<select id="getModelList" parameterType="java.util.Map" resultType="java.util.Map">
-  SELECT
-    id,
-    name,
-    birthday
-  FROM person_table
-  WHERE
-  <if test="name != null and name !=''">
-        name = #{name} AND
-  </if>
-  1=1
-</select>
-```
-
 # 参考资料
 - [MySQL官方文档](https://dev.mysql.com/doc/refman/8.0/en/)
 - [MySQL教程|菜鸟教程](https://www.runoob.com/mysql/mysql-tutorial.html)
