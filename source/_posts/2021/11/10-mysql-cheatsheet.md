@@ -163,6 +163,13 @@ SELECT * FROM table_name [WHERE 条件]
 SELECT * FROM table_name GROUP BY column_1
 ```
 
+### IFNULL函数
+可以将值为null的结果替换成指定内容
+```sql
+SELECT IFNULL(name, "无名氏") FROM table_name
+```
+（如果name为null，则返回“无名氏”）
+
 # 多表联查
 ## INNER JOIN
 获取两个表中字段匹配的记录，`INNER`可省略
