@@ -1,7 +1,7 @@
 ---
 title: 在Java里使用AES加密
 date: 2021-11-05 10:43:32
-tags: [Java, 工具]
+tags: Java
 ---
 
 # 前言

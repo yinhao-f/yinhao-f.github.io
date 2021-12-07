@@ -2,6 +2,7 @@
 title: MySQL Cheatsheet
 date: 2021-11-10 15:01:38
 tags: MySQL
+featured: true
 ---
 # 前言
 实用MySQL语句小抄，持续更新

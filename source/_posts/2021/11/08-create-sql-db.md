@@ -1,7 +1,7 @@
 ---
 title: 从零搭建MySQL数据库
 date: 2021-11-08 14:23:59
-tags: [MySQL, Java, IntelliJ IDEA]
+tags: [MySQL, IntelliJ IDEA]
 ---
 # 前言
 安装MySQL，建立连接，并在IntelliJ IDEA中操作使用

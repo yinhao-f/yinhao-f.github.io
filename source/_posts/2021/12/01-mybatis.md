@@ -1,8 +1,17 @@
 ---
 title: MyBatis 笔记
 date: 2021-12-01 16:21:18
-tags:
+tags: [MySQL, MyBatis, Java]
+featured: true
 ---
+# 模糊查询
+使用`CONCAT()`连接`"%"`与入参`name`以实现`LIKE`模糊查询
+```xml
+<select id="selectPerson" parameterType="java.lang.String" resultType="java.util.Map">
+  SELECT * FROM table_name WHERE name LIKE CONCAT('%', #{name}, '%')
+</select>
+```
+
 # 动态SQL
 - if
 - choose (when, otherwise)
