@@ -170,6 +170,13 @@ SELECT IFNULL(name, "无名氏") FROM table_name
 ```
 （如果name为null，则返回“无名氏”）
 
+### 大小写区分
+`WHERE`默认对字符串不区分大小写，如果需要区分大小写，需要加入`BINARY`，如：
+```sql
+SELECT * FROM table_name
+WHERE BINARY name = "aBcD"
+```
+
 # 多表联查
 ## INNER JOIN
 获取两个表中字段匹配的记录，`INNER`可省略
