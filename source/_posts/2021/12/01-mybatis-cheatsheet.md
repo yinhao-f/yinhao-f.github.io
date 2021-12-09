@@ -1,5 +1,5 @@
 ---
-title: MyBatis 笔记
+title: MyBatis Cheatsheet
 date: 2021-12-01 16:21:18
 tags: [MySQL, MyBatis, Java]
 featured: true

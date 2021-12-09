@@ -4,8 +4,7 @@ date: 2021-11-10 15:01:38
 tags: MySQL
 featured: true
 ---
-# 前言
-实用MySQL语句小抄，持续更新
+# MySQL笔记
 SQL，全称Structured Query Language，读作"sequel"或"S-Q-L"
 
 # 命令行语句
