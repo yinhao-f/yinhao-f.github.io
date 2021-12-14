@@ -181,7 +181,7 @@ WHERE BINARY name = "aBcD"
 ## INNER JOIN
 获取两个表中字段匹配的记录，`INNER`可省略
 ```sql
-SELECT a.column_1, b.column_1 FROM table_name a,
+SELECT a.column_1, b.column_1 FROM table_name a
 [INNER] JOIN table_name b ON a.COLUMN_1 = b.column_1
 ```
 与一下语句查询结果相同
