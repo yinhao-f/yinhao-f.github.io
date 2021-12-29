@@ -171,3 +171,10 @@ git stash pop
 ```shell
 git cherry-pick [commit_id]
 ```
+
+# 延申阅读
+[A Visual Git Reference](http://marklodato.github.io/visual-git-guide/index-en.html)
+[Think Like (a) Git](http://think-like-a-git.net/sections/about-this-site/what-this-site-will-try-to-teach-you.html)
+[Pro Git](https://git-scm.com/book/en/v2)
+[Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
+[GitHub Cheatsheet](https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/)
