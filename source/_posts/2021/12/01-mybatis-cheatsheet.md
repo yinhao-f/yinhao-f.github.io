@@ -69,5 +69,36 @@ featured: true
 </select>
 ```
 
+## foreach
+如果需要传入一个可迭代的对象，如list，可以用foreach功能转换为MySQL可识别的格式
+比如有一个list，含有元素`["red", "yellow", "blue"]`，那么：
+```xml
+<select id="selectBalloons" resultType="java.util.Map">
+  SELECT *
+  FROM balloon_table
+  WHERE color IN
+  <foreach item="item" index="index" collection="list"
+    open="(" separator="," close=")">
+      #{item}
+  </foreach>
+</select>
+```
+其中的`foreach`模块会生成`("red", "yellow", "blue")`
+
+如果list中的元素是对象类型，如：
+```java
+Map map = new HashMap();
+List list = new ArrayList();
+map.put("color", "red");
+list.add(map);
+```
+那么foreach需要写成：
+```xml
+<foreach item="item" index="index" collection="list"
+  open="(" separator="," close=")">
+    #{item.color}
+</foreach>
+```
+
 # 参考资料
 [MyBatis官网](https://mybatis.net.cn/)
