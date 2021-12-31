@@ -182,7 +182,7 @@ WHERE BINARY name = "aBcD"
 获取两个表中字段匹配的记录，`INNER`可省略
 ```sql
 SELECT a.column_1, b.column_1 FROM table_name a
-[INNER] JOIN table_name b ON a.COLUMN_1 = b.column_1
+[INNER] JOIN table_name b ON a.column_1 = b.column_1
 ```
 与一下语句查询结果相同
 ```sql
@@ -195,6 +195,16 @@ WHERE a.column_1 = b.column_1
 
 ## RIGHT JOIN
 返回右表中所有记录，即使左表无对应记录
+
+## OUTER JOIN
+MySQL不支持OUTER JOIN，可以用UNION ALL来代替
+```sql
+SELECT * FROM table_a a
+    LEFT JOIN table_b b ON a.column = b.column
+UNION ALL
+SELECT * FROM table_a a
+    RIGHT JOIN table_b b ON a.column = b.column
+```
 
 # ALTER 表和数据库修改
 ## 删除字段
@@ -235,6 +245,15 @@ ALTER TABLE table_name ADD column_name data_type
 |---|---|
 | CHAR | (0, 255) |
 | VARCHAR | (0, 65535) |
+
+# 其他
+## 查询重复条目
+```sql
+SELECT *, COUNT(column_name)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(column_name) > 1
+```
 
 # 参考资料
 - [MySQL官方文档](https://dev.mysql.com/doc/refman/8.0/en/)
