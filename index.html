@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Photo by Yinhao</title>
+        <link rel="icon" href="insta.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body id="body">
+        <header>
+            <h1>Photo by Yinhao</h1>
+            <aside class="themes">
+                <button id="light" onclick="changeToLight()">Light</button><br>
+                <button id="dark" onclick="changeToDark()">Dark</button><br>
+                <button id="colorful" onclick="changeToColor()">Colorful</button>
+            </aside>
+            <aside id="place-holder"></aside>
+        </header>
+        <main>
+            <nav class="navbar">
+                <ul class="navlinks">
+                    <ui><a href="index.html">Home</a></ui>
+                    <ui><a href="about.html">About Me</a></ui>
+                    <ui><a href="japan-2019.html">Japan 2019</a></ui>
+                    <ui><a href="cancun-2019.html">Cancun 2019</a></ui>
+                    <ui><a href="london-2023.html">London 2023</a></ui>
+                    <ui><a href="contact.html">Contact Me</a></ui>
+                </ul>
+            </nav>
+            <div id="grid-container">
+                <div id="video">
+                    <video controls autoplay loop muted><source src="time-lapse.mp4"></video>
+                    <h3>Hi, my name is Yinhao. I like taking photos when travelling. I think it's a good way to record my journey.</h3>
+                </div>
+                <div id="music">
+                    <p>A calming music for you to listen to: [1]</p>
+                    <audio controls loop><source src="music.mp3"></audio>
+                </div>
+                <div id="citation">
+                    <p>[1] Strawberry Candy | Free Background Music. 2022. Calm Space (1 Hour Mix) - Royalty Free Calming. Audio. Retrieved April 9, 2024 from https://soundcloud.com/strawberry-candy-music/calm-space-1-hour-mix-royalty-free-calming-peaceful-music-for-youtube-free-download</p>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

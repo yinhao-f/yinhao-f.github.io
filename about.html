@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About Me</title>
+        <link rel="icon" href="insta.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body id="body">
+        <header>
+            <h1>About Me</h1>
+            <aside class="themes">
+                <button id="light" onclick="changeToLight()">Light</button><br>
+                <button id="dark" onclick="changeToDark()">Dark</button><br>
+                <button id="colorful" onclick="changeToColor()">Colorful</button>
+            </aside>
+            <aside id="place-holder"></aside>
+        </header>
+        <main>
+            <nav class="navbar">
+                <ul class="navlinks">
+                    <ui><a href="index.html">Home</a></ui>
+                    <ui><a href="about.html">About Me</a></ui>
+                    <ui><a href="japan-2019.html">Japan 2019</a></ui>
+                    <ui><a href="cancun-2019.html">Cancun 2019</a></ui>
+                    <ui><a href="london-2023.html">London 2023</a></ui>
+                    <ui><a href="contact.html">Contact Me</a></ui>
+                </ul>
+            </nav>
+            <div id="grid-container2">
+                <div id="intro">
+                    <h3>I picked up photography in 2019. My Instagram:
+                        <a href="https://www.instagram.com/furai_yh/" target="_blank">
+                            <img id="insta-photo" src="insta.png" alt="Instagram profile photo as a link" width="30" height="30">
+                        </a>
+                    </h3>
+                </div>
+                <div id="gear-list">
+                    <h2>Gear I use:</h2>
+                    <ul>
+                        <li>Camera:</li>
+                        <ul>
+                            <li>Sony α7 III</li>
+                        </ul>
+                        <li>Lens:</li>
+                        <ul>
+                            <li>Sigma 50mm prime lens</li>
+                            <li>Sigma 35mm prime lens</li>
+                        </ul>
+                        <li>Other:</li>
+                        <ul>
+                            <li>iFootage tripod</li>
+                        </ul>            
+                    </ul>
+                </div>
+                <div id="time-lapse">
+                    <p>Something else I like to do is time-lapse videos, just like the one you saw on the main page. </p>
+                    <iframe id="youtube" src="https://www.youtube.com/embed/LEj7J9lbtVY?si=jr9hNdZxFX3SKo3D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

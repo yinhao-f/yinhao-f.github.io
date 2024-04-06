@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="icon" href="insta.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="body">
+    <header>
+        <h1>Contact Me</h1>
+        <aside class="themes">
+            <button id="light" onclick="changeToLight()">Light</button><br>
+            <button id="dark" onclick="changeToDark()">Dark</button><br>
+            <button id="colorful" onclick="changeToColor()">Colorful</button>
+        </aside>
+        <aside id="place-holder"></aside>
+    </header>
+    <main>
+        <nav class="navbar">
+            <ul class="navlinks">
+                <ui><a href="index.html">Home</a></ui>
+                <ui><a href="about.html">About Me</a></ui>
+                <ui><a href="japan-2019.html">Japan 2019</a></ui>
+                <ui><a href="cancun-2019.html">Cancun 2019</a></ui>
+                <ui><a href="london-2023.html">London 2023</a></ui>
+                <ui><a href="contact.html">Contact Me</a></ui>
+            </ul>
+        </nav>
+        <section>
+            <form>
+                <label for="fname">First name:</label><br>
+                <input type="text" name="fname" id="fname" required><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" name="lname" id="lname" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" name="email" id="email" required autocomplete="off">
+
+                <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+                <label for="newsletter">Sign me up for monthly newsletters</label><br>
+
+                <label for="returning_yes">Are you a returning subscriber?</label><br>
+                <input type="radio" id="returning_yes" name="returning" value="returning_yes" required>
+                <label for="returning_yes">Yes</label><br>
+                <input type="radio" id="returning_no" name="returning" value="returning_no" required>
+                <label for="returning_no">No</label><br>
+
+                <label for="liked">How did you feel about my website?</label><br>
+                <input type="radio" id="liked" name="liked_website" value="liked" required>
+                <label for="liked">Liked</label><br>
+                <input type="radio" id="disliked" name="liked_website" value="disliked">
+                <label for="disliked">Disliked</label><br>
+                <input type="radio" id="either" name="liked_website" value="either">
+                <label for="either">Either</label><br>
+
+                <label for="add-msg">Additional comments you would like to share:</label><br>
+                <textarea name="message" id="add-msg">Leave your message here</textarea><br>
+
+                <input type="submit" value="Submit" id="submit"><br>
+                <p id="error-msg"></p>
+            </form>
+        </section>
+    </main>
+    <script src="script-contact.js"></script>
+</body>
+</html>

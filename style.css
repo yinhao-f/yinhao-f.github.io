@@ -1,0 +1,203 @@
+body {
+    background-color: lightblue;
+    font-family: Arial;
+}
+
+/* color changing */
+.light {
+    background-color: white;
+}
+
+.light h1 {
+    background-color: rgb(230, 230, 230);
+}
+
+.light .navlinks a:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.light .navlinks a {
+    background-color: rgb(230, 230, 230);
+}
+
+.dark {
+    background-color: rgb(40, 40, 40);
+    color: rgb(230, 230, 230);
+}
+
+.dark h1 {
+    background-color: rgb(60, 60, 60);
+}
+
+.dark .navlinks a:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.dark .navlinks a {
+    background-color: rgb(100, 100, 100);
+    color: rgb(230, 230, 230);
+}
+
+.color {
+    background-color: lightblue;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template:
+        'holder header themes';
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    grid-area: header;
+    background-color: #FFAC8F;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#place-holder {
+    grid-area: holder;
+    width: 5vw;
+}
+
+header .themes {
+    grid-area: themes;
+    width: 5vw;
+}
+
+.themes * {
+    margin: 2px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navlinks {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navlinks a:hover {
+    background-color: skyblue;
+}
+
+.navlinks a {
+    border: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: hsl(197, 70%, 60%);
+}
+
+/* home page */
+#grid-container {
+    display: grid;
+    grid-template-rows: auto 20vh auto;
+    justify-content: space-evenly;
+}
+
+#grid-container > * {
+    text-align: center;
+}
+
+video {
+    width: 90vw;
+}
+
+audio {
+    width: 80vw;
+}
+
+/* about me page */
+#grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr;
+    justify-content: space-evenly;
+    align-content: start;
+    grid-template:
+    'intro intro'
+    'gear-list time-lapse';
+    height: 100vh;
+    width: auto;
+}
+
+#intro {
+    text-align: center;
+    grid-area: intro;
+    padding: 10px;
+}
+
+#gear-list {
+    grid-area: gear-list;
+    padding: 10px;
+    list-style-type: square;
+}
+
+#time-lapse {
+    grid-area: time-lapse;
+    padding: 10px;
+    width: 70vw;
+    height: 60vh;
+}
+
+#youtube {
+    height: 90%;
+    width: 100%;
+}
+
+img {
+    padding: 10px;
+    margin: 10px;
+    width: 70vw;
+}
+
+.photo-grid {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.photo-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* correct insta profile photo */
+img[alt~="Instagram"] {
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#insta-photo:hover {
+    opacity: 75%;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+form * {
+    margin-bottom: 10px;
+}
+
+#add-msg {
+    width: 40vw;
+    height: 30vh;
+}
